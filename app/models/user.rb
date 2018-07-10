@@ -7,10 +7,12 @@ class User < ApplicationRecord
 
   def existing_chats_users
     existing_chat_users = []
-    self.chats.each do |chat|
-      existing_chat_users.concat(chat.subscriptions.where.not(user_id: self.id).map { |subscription| subscription.user })
+    chats.each do |chat|
+      chat.subscriptions.each do |subscription|
+        existing_chat_users << subscription.user if subscription.user != self
+      end
     end
-    existing_chat_users.uniq
+    existing_chat_users
   end
   
 end
