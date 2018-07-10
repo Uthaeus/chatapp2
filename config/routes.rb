@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/home'
+
   root 'chats#index'
 
   resources :users, only: [:new, :create] do 

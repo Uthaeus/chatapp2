@@ -1,0 +1,21 @@
+<div>
+  <%= link_to 'Home', root_path, class: 'nav-item' %>
+
+  <% if current_user %>
+    <%= link_to 'Logout', session_path(current_user.id), method: :delete, class: 'nav-item' %>
+  
+  <% end %>
+</div>
+
+
+<!--  pages_home GET    /pages/home(.:format)               pages#home
+       root GET    /                                   chats#index
+ user_chats GET    /users/:user_id/chats(.:format)     chats#index
+            POST   /users/:user_id/chats(.:format)     chats#create
+  user_chat GET    /users/:user_id/chats/:id(.:format) chats#show
+      users POST   /users(.:format)                    users#create
+   new_user GET    /users/new(.:format)                users#new
+   sessions POST   /sessions(.:format)                 sessions#create
+new_session GET    /sessions/new(.:format)             sessions#new
+    session DELETE /sessions/:id(.:format)             sessions#destroy
+   messages POST   /messages(.:format)                 messages#create -->
