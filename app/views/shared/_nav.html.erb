@@ -1,9 +1,11 @@
 <div>
   <%= link_to 'Home', root_path, class: 'nav-item' %>
+  <%= link_to 'Discussions', discussions_path, class: 'nav-item' %>
 
   <% if current_user %>
+    <%= link_to 'Chats', user_chats_path(current_user.id), class: 'nav-item' %>
     <%= link_to 'Logout', session_path(current_user.id), method: :delete, class: 'nav-item' %>
-  
+
   <% end %>
 </div>
 
