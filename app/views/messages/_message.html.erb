@@ -1,1 +1,6 @@
-<p><%= message.user.username %>: <%= message.content %></p>
+<div>
+  <p><%= message.content %></p><br>
+  <p class="text-right">
+    <small>Sent by <%= message.user.username %> <%= distance_of_time_in_words(message.created_at, Time.now) %> ago</small>
+  </p>
+</div>

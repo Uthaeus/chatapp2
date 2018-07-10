@@ -2,8 +2,10 @@ require 'securerandom'
 
 class ChatsController < ApplicationController
   before_action :require_login
+  before_action :set_sidebar
 
   def index
+    @discussions = Discussion.all 
     chats = current_user.chats 
     @existing_chats_users = current_user.existing_chats_users
   end
@@ -45,5 +47,10 @@ class ChatsController < ApplicationController
   def require_login
     redirect_to new_session_path unless logged_in?
   end
-  
+
+  def set_sidebar
+    chats = current_user.chats 
+    @existing_chats_users = current_user.existing_chats_users
+  end
+
 end

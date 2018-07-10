@@ -1,21 +1,22 @@
-<h2>Edit Discussion</h2>
+<div class="col-sm-8">
+  <h2>Edit Discussion</h2>
 
-<div>
-  <%= render 'form', discussion: @discussion %>
-</div>
+  <div>
+    <%= render 'form', discussion: @discussion %>
+  </div>
 
-<div>
-  <div class="row">
-    <div class="col-sm-8">
-      <div class="text-left">
-        <%= link_to '<< Back >>', @discussion, class: 'btn' %> |
-        <%= link_to '<< Discussions >>', discussions_path, class: 'btn' %> |
-        <%= link_to '<< Home >>', root_path, class: 'btn' %>
+  <div>
+    <div class="row">
+      <div class="col-sm-8">
+        <div class="text-left">
+          <%= link_to '<< Back >>', @discussion, class: 'btn' %> |
+          <%= link_to '<< Home >>', root_path, class: 'btn' %>
+        </div>
       </div>
-    </div>
-    <div class="col-sm-4">
-      <div class="text-right">
-        <%= link_to '<< Delete Discussion >>', discussion_path(@discussion), method: :delete, class: 'btn btn-outline-danger' %>
+      <div class="col-sm-4">
+        <div class="text-right">
+          <%= link_to '<< Delete Discussion >>', discussion_path(@discussion), method: :delete, class: 'btn btn-outline-danger' %>
+        </div>
       </div>
     </div>
   </div>

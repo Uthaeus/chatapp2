@@ -1,18 +1,20 @@
-<h1>Discussions</h1>
+<div class="col-sm-8">
+  <h1>Discussions</h1>
 
-<%= link_to 'New Discussion', new_discussion_path(@discussion), class: "btn btn-primary" %>
+  <%= link_to 'New Discussion', new_discussion_path(@discussion), class: "btn btn-primary" %>
 
-<div>
-  <% @discussions.each do |discussion| %>
-    <div class="card">
-      <div class="row">
-        <div class="col-sm-4">
-          <%= link_to discussion.title, discussion %>
-        </div>
-        <div class="col-sm-8">
-          <%= truncate(discussion.body, :length => 80) %>
+  <div>
+    <% @discussions.each do |discussion| %>
+      <div class="card">
+        <div class="row">
+          <div class="col-sm-4">
+            <%= link_to discussion.title, discussion %>
+          </div>
+          <div class="col-sm-8">
+            <%= truncate(discussion.body, :length => 80) %>
+          </div>
         </div>
       </div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>

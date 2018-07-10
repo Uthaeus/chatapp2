@@ -1,28 +1,20 @@
-<ul>
-  <% if @existing_chats_users %>
-    <% @existing_chats_users.each do |other_user| %>
-      <% if other_user != current_user %>
-        <li>
-          <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-            <%= other_user.username %>
-          <% end %>
-        </li>
-      <% end %>
-    <% end %>
-  <% end %>
-</ul>
 
-All Users:
-<ul>
-  <% User.all.each do |other_user| %>
-    <% if other_user != current_user %>
-      <li>
-        <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
-          <%= other_user.username %>
-        <% end %>
-      </li>
-    <% end %>
+<div class="col-sm-8">
+  <% @discussions.each do |discussion| %>
+    <div class="card">
+      <div class="row">
+        <div class="col-sm-4">
+          <h3><%= link_to discussion.title, discussion %></h3>
+          <span>
+            <small>Created by <%= discussion.user.username %> <%= distance_of_time_in_words(discussion.created_at, Time.now) %> ago</small>
+          </span>
+        </div>
+        <div class="col-sm-8">
+          <p><%= truncate(discussion.body, :length => 80) %></p>
+        </div>
+      </div>
+    </div>
   <% end %>
-</ul>
-
-<%= link_to "Logout", session_path(current_user.id), method: :delete %>
+</div>
+<!-- 
+<%= link_to "Logout", session_path(current_user.id), method: :delete %> -->

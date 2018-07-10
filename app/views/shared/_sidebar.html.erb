@@ -1,0 +1,31 @@
+<div class="col-sm-4">
+  
+  <% if @existing_chats_users %>
+    My Contacts:
+    <ul>
+      <% @existing_chats_users.each do |other_user| %>
+        <% if other_user != current_user %>
+          <li class="text-center">
+            <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+              <%= other_user.username %>
+            <% end %>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+  
+
+  All Users:
+  <ul>
+    <% User.all.each do |other_user| %>
+      <% if other_user != current_user %>
+        <li class="text-center">
+          <%= link_to(user_chats_path(current_user, :other_user => other_user.id), method: :post) do %>
+            <%= other_user.username %>
+          <% end %>
+        </li>
+      <% end %>
+    <% end %>
+  </ul>
+</div>
