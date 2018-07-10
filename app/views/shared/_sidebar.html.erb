@@ -2,6 +2,7 @@
   
   <% if @existing_chats_users %>
     My Contacts:
+    <hr />
     <ul>
       <% @existing_chats_users.each do |other_user| %>
         <% if other_user != current_user %>
@@ -17,6 +18,7 @@
   
 
   All Users:
+  <hr />
   <ul>
     <% User.all.each do |other_user| %>
       <% if other_user != current_user %>

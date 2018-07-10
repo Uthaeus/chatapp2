@@ -3,7 +3,7 @@ class SessionsController < ApplicationController
   def new
     if !logged_in?
       @user = User.new
-      render 'new'
+      render partial: 'sessions/new'
     end
   end
 
@@ -13,10 +13,10 @@ class SessionsController < ApplicationController
     if @user && @user.authenticate(login_params[:password])
       session[:user_id] = @user.id 
 
-      redirect_to root_path
+      redirect_to user_chats_path(user_id: current_user.id)
     else
       @error = "Invalid username or password"
-      render 'new'
+      render partial: 'sessions/new'
     end
   end
 

@@ -1,0 +1,17 @@
+<%= form_for User.new, url: sessions_path, method: :post do |f| %>
+
+  <div class="form-group">
+    <%= f.label :username %><br>
+    <%= f.text_field :username, class: 'form-control' %><br>
+  </div>
+  <div class="form-group">
+    <%= f.label :password %><br>
+    <%= f.password_field :password, class: 'form-control' %><br>
+  </div>
+
+  <div class="form-group">
+    <%= f.submit 'Login', class: 'btn btn-outline-secondary btn-block' %>
+  </div>
+<% end %>
+
+<%= link_to 'Or Register', new_user_path, class: 'btn btn-outline-primary btn-block' %>

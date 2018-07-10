@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-  root to: 'chats#index'
+  root to: 'pages#home'
 
-  get 'pages/home'
 
   resources :discussions
 
