@@ -11,6 +11,7 @@ class DiscussionsController < ApplicationController
 
   def create
     @discussion = Discussion.new(dis_params)
+    @discussion.user_id = current_user.id 
 
     respond_to do |format|
       if @discussion.save
@@ -31,6 +32,7 @@ class DiscussionsController < ApplicationController
       else
         format.html { render :edit }
         format.json { render json: @discussion.errors, status: :unprocessable_entity }
+      end
     end
   end
 

@@ -10,14 +10,22 @@
 </div>
 
 
-<!--  pages_home GET    /pages/home(.:format)               pages#home
-       root GET    /                                   chats#index
- user_chats GET    /users/:user_id/chats(.:format)     chats#index
-            POST   /users/:user_id/chats(.:format)     chats#create
-  user_chat GET    /users/:user_id/chats/:id(.:format) chats#show
-      users POST   /users(.:format)                    users#create
-   new_user GET    /users/new(.:format)                users#new
-   sessions POST   /sessions(.:format)                 sessions#create
-new_session GET    /sessions/new(.:format)             sessions#new
-    session DELETE /sessions/:id(.:format)             sessions#destroy
-   messages POST   /messages(.:format)                 messages#create -->
+<!--            root GET    /                                   chats#index
+     pages_home GET    /pages/home(.:format)               pages#home
+    discussions GET    /discussions(.:format)              discussions#index
+                POST   /discussions(.:format)              discussions#create
+ new_discussion GET    /discussions/new(.:format)          discussions#new
+edit_discussion GET    /discussions/:id/edit(.:format)     discussions#edit
+     discussion GET    /discussions/:id(.:format)          discussions#show
+                PATCH  /discussions/:id(.:format)          discussions#update
+                PUT    /discussions/:id(.:format)          discussions#update
+                DELETE /discussions/:id(.:format)          discussions#destroy
+     user_chats GET    /users/:user_id/chats(.:format)     chats#index
+                POST   /users/:user_id/chats(.:format)     chats#create
+      user_chat GET    /users/:user_id/chats/:id(.:format) chats#show
+          users POST   /users(.:format)                    users#create
+       new_user GET    /users/new(.:format)                users#new
+       sessions POST   /sessions(.:format)                 sessions#create
+    new_session GET    /sessions/new(.:format)             sessions#new
+        session DELETE /sessions/:id(.:format)             sessions#destroy
+       messages POST   /messages(.:format)                 messages#create -->

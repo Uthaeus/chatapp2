@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
 
   root to: 'chats#index'
-  
+
   get 'pages/home'
+
+  resources :discussions
 
   resources :users, only: [:new, :create] do 
     resources :chats, only: [:index, :show, :create]
