@@ -29,6 +29,10 @@ class ChatsController < ApplicationController
     @message = Message.new
   end
 
+  def dis_show
+    @discussion = Discussion.find(params[:id])
+  end
+
 
   private
 

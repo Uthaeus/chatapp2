@@ -4,7 +4,7 @@
     <div class="card default-card">
       <div class="row">
         <div class="col-sm-4">
-          <h3><%= link_to discussion.title, discussion %></h3>
+          <h3><%= link_to discussion.title, chats_dis_show_path(discussion) %></h3>
           <span>
             <small>Created by <%= discussion.user.username %> <%= distance_of_time_in_words(discussion.created_at, Time.now) %> ago</small>
           </span>

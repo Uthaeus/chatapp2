@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   root to: 'pages#home'
 
+  get 'chats/dis_show'
 
   resources :discussions
 
